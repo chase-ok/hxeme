@@ -21,7 +21,8 @@ import hxeme.Locals;
 import hxeme.object.XemeVector;
 import hxeme.parsing.Parser;
 import hxeme.parsing.Tokenizer;
-import haxe.FastList;
+import haxe.ds.GenericStack;
+//import haxe.FastList;
 import hxeme.prims.PrimitiveManager;
 
 /**
@@ -32,8 +33,8 @@ import hxeme.prims.PrimitiveManager;
 class Main {
 
     static function main() {
-	    Log.setColor(0xFFFFFF);
         #if flash9
+	    Log.setColor(0xFFFFFF);
             Globals.init(Lib.current);
             Lib.current.addChild(new Console());
         #elseif neko

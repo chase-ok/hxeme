@@ -99,6 +99,8 @@ class Api {
                 var it : Iterator<XemeGeneric> = value.getValue().iterator();
                 for (elem in it) a.push(convertFromXeme(elem));
                 a;
+            default: 
+                //
         }
     }
     

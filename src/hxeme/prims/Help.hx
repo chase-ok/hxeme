@@ -43,7 +43,7 @@ class Help {
         return new XemeString(str);
     }
     
-    static function sort<T>(h: Hash<T>): Array<String> {
+    static function sort<T>(h: Map<String, T>): Array<String> {
         var arr = new Array<String>();
         for (item in h.keys()) arr.push(item);
         

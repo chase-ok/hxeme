@@ -5,7 +5,7 @@
 
 package hxeme.object;
 
-import haxe.FastList;
+//import haxe.FastList;
 import hxeme.utils.ListUtils;
 
 class XemePair extends XemeGeneric {

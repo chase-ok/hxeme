@@ -5,7 +5,8 @@
 
 package hxeme.utils;
 
-import haxe.FastList;
+import haxe.ds.GenericStack;
+//import haxe.FastList;
 import hxeme.parsing.Parser;
 import hxeme.Errors;
 import hxeme.object.XemeGeneric;

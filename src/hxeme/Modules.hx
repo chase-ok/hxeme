@@ -22,11 +22,11 @@ class Modules {
         ];
     
     static var initialized = false;
-    static var modules     : Hash<XemeModule>;
+    static var modules     : Map<String, XemeModule>;
     
     public static function init() {
         initialized = true;
-        modules     = new Hash<XemeModule>();
+        modules     = new Map<String, XemeModule>();
     }
     
     public static function isInitialized() {

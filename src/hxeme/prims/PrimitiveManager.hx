@@ -18,13 +18,13 @@ import hxeme.prims.func.BasicFunc;
 import hxeme.prims.obj.BasicObj;
 
 #if neko
-import neko.Sys;
+//import neko.System;
 #end
 
 class PrimitiveManager {
     
-    public static var PRIMITIVES   : Hash<XemeGeneric>;
-    public static var PRIM_CLASSES : Array<Class<Dynamic>> = cast [
+    public static var PRIMITIVES   : Map<String, XemeGeneric>;
+    public static var PRIM_CLASSES : Array<Dynamic> = [
             BasicMath, BasicLogic, BasicLists, BasicVectors, MathLogic, 
             BasicFunc, Continuations, BasicObj, BasicStrings, RuntimeErrors,
             Help,
@@ -34,7 +34,7 @@ class PrimitiveManager {
     
     public static function init() {
         initialized = true;
-        PRIMITIVES  = new Hash();
+        PRIMITIVES  = new Map();
         
         #if neko
             PRIMITIVES.set("exit", new XemeFunc(
