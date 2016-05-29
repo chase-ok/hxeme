@@ -199,7 +199,7 @@ class BasicLists {
             throw TypeError(value.getTypeName(), XemePair.TYPE_NAME);
         }
         
-        return untyped value;
+        return cast(value, XemePair);
     }
     
 }

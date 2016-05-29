@@ -20,11 +20,11 @@ class StringUtils {
     inline public static function ensureString(value : XemeGeneric) : XemeString {
         checkIsString(value);
         
-        return untyped value;
+        return cast(value, XemeString);
     }
     
     inline public static function getValue(string : XemeString) : String {
-        return untyped string.getValue();
+        return  cast(string.getValue(), String);
     }
     
 }

@@ -17,6 +17,7 @@ import hxeme.Errors;
 import hxeme.Locals;
 import hxeme.parsing.Parser;
 
+
 class BasicObj {
     
     static inline var INF_ARGS = XemeFunc.NO_ARG_COUNT;
@@ -70,10 +71,11 @@ class BasicObj {
                                               : XemeGeneric {
         if (args.length < 1) throw NotEnoughArgs(1, args.length);
         if (args.length > 2) throw "Too many args: " + args.length;
-        
+       
+
+ 
         var it        = args.iterator();
         var className = getString(eval(it.next()));
-        
         var c         = Type.resolveClass(className);
         if (c == null) throw "Import failed";
         
@@ -91,6 +93,7 @@ class BasicObj {
         if (args.length < 1) throw NotEnoughArgs(1, args.length);
         
         var c     = ObjUtils.ensureObj(args.pop()).getValue();
+        
         var cArgs = new Array<Dynamic>();
         
         for (arg in args) cArgs.push(Api.convertFromXeme(arg));

@@ -37,8 +37,18 @@ class Main {
 	    Log.setColor(0xFFFFFF);
             Globals.init(Lib.current);
             Lib.current.addChild(new Console());
-        #elseif neko
-            new Console();
+        #else 
+            //if neko
+            var c = new Console();
+        PrimitiveManager.setPrimitive("display2", new XemeFunc(
+            function(args : List<XemeGeneric>) : XemeGeneric {
+                //me.print(args.first());
+                return XemeGeneric.NIL;
+            },
+            1
+        ));
+            c.start();        
+
         #end
     }
 

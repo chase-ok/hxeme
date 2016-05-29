@@ -12,8 +12,8 @@ import hxeme.parsing.Parser;
 import hxeme.parsing.Tokenizer;
 import hxeme.prims.PrimitiveManager;
 
-#if neko
-import neko.Lib;
+//#if neko
+//import neko.Lib;
 //import neko.Sys;
 import sys.io.File;
 import sys.io.FileInput;
@@ -41,7 +41,7 @@ class Console {
             1
         ));
         
-		start();
+	//	start();
 	}
     
     public function readLine() : String {
@@ -120,7 +120,8 @@ class Console {
 	
 }
 
-#elseif flash9
+//#else
+#if flash9
 
 import flash.display.Sprite;
 import flash.display.Graphics;

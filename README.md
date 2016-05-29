@@ -86,3 +86,9 @@ zero?
 grep -r DEFINED_ .|awk '{print $1}'|sed s/://g|grep hx$|xargs cat|grep "name : "|grep -v "//"|perl -e 'while(<>){chomp; /name\ :\ \"(.*?)\"/; print "$1\n";}'|sort|uniq > README.md 
 
 )
+
+Finding the function: 
+
+grep -r "new" src|grep "func :"
+
+grep -r "initClass(" src|grep function

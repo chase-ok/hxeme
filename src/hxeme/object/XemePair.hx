@@ -59,7 +59,7 @@ class XemePair extends XemeGeneric {
 				return tail;
 			}
 			
-			tail = untyped tailCdr;
+			tail = cast( tailCdr, XemePair);
 		}
 		
 		throw "Uh oh";

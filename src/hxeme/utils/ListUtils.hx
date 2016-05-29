@@ -41,7 +41,7 @@ class ListUtils {
     inline public static function ensureList(value : XemeGeneric) : XemePair {
         checkIsList(value);
         
-        return untyped value;
+        return cast(value, XemePair);
     }
     
     inline public static function append(tail  : XemePair, 
