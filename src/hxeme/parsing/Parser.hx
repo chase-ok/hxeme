@@ -24,7 +24,7 @@ class Parser {
     public static var IDENTIFIERS = "abcdefghijklmnopqrstuvwxyz!<>=+-/*_:.{}'#" +
                                     "?\"";
     public static var IDENT_HASH = {
-        var hash = new Hash<Bool>();
+        var hash = new Map<String, Bool>();
         for (i in 0...IDENTIFIERS.length) {
             hash.set(IDENTIFIERS.charAt(i), true);
         }
@@ -73,6 +73,7 @@ class Parser {
                 
                 throw AssertFailed;
         }
+        return null;
     }
     
     function handleData(value : String) : Expr {
@@ -105,24 +106,24 @@ class Parser {
     function parseNum(data : String) : XemeNum {
         if (data.substr(0, 2) == "0x") {
             //taken from hscript
-            var n   = haxe.Int32.ofInt(0);
+            var n   = 0;//Int32.ofInt(0);
             var hex = data.substr(2);
             
 			for (i in 0...hex.length) {
                 var char = hex.charCodeAt(i);
 				switch (char) {
 					case 48,49,50,51,52,53,54,55,56,57: // 0-9
-						n = haxe.Int32.add(haxe.Int32.shl(n,4), cast (char - 48));
+						n = n << 4 + cast(char - 48); // haxe.Int32.add(haxe.Int32.shl(n,4), cast (char - 48));
 					case 65,66,67,68,69,70: // A-F
-						n = haxe.Int32.add(haxe.Int32.shl(n,4), cast (char - 55));
+						n = n << 4 + cast(char - 55); //haxe.Int32.add(haxe.Int32.shl(n,4), cast (char - 55));
 					case 97,98,99,100,101,102: // a-f
-						n = haxe.Int32.add(haxe.Int32.shl(n,4), cast (char - 87));
+						n = n << 4 + cast(char - 87); //haxe.Int32.add(haxe.Int32.shl(n,4), cast (char - 87));
 					default:
                         throw Unexpected(char);
                 }
             }
             
-            return new XemeNum(Int32.toInt(n));
+            return new XemeNum(n);
         }
         
         var parsedNum = Std.parseFloat(data);

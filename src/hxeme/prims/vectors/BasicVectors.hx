@@ -22,7 +22,7 @@ class BasicVectors {
         return new XemeVector(switch (arg.getTypeName()) {
             case XemePair.TYPE_NAME:
                 var a               = new Array<XemeGeneric>();
-                var pair : XemePair = untyped arg;
+                var pair : XemePair = cast(arg, XemePair);
                 
                 for (item in pair) a.push(item);
                 a;
@@ -54,7 +54,7 @@ class BasicVectors {
             throw TypeError(value.getTypeName(), XemeVector.TYPE_NAME);
         }
         
-        return untyped value;
+        return cast(value, XemeVector);
     }
     
 }

@@ -17,8 +17,8 @@ import hxeme.prims.obj.BasicObj;
 
 class SpecialForms {
     
-    public static var FORMS         : Hash<XemeSpecialForm>;
-    public static var FORMS_CLASSES : Array<Class<Dynamic>> = cast [
+    public static var FORMS         : Map<String, XemeSpecialForm>;
+    public static var FORMS_CLASSES : Array<Dynamic> = [
             Define, XemeLambda, XemeIf, Quote, BasicLogic, BasicFunc, LazyEval,
             BasicObj, RuntimeErrors, Modules,
         ];
@@ -27,7 +27,7 @@ class SpecialForms {
     
     public static function init() {
         initialized = true;
-        FORMS       = new Hash();
+        FORMS       = new Map();
         
         for (c in FORMS_CLASSES) initClass(c);
     }

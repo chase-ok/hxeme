@@ -5,7 +5,7 @@
 
 package hxeme.object;
 
-import haxe.FastList;
+//import haxe.FastList;
 import hxeme.utils.ListUtils;
 
 class XemePair extends XemeGeneric {
@@ -59,7 +59,7 @@ class XemePair extends XemeGeneric {
 				return tail;
 			}
 			
-			tail = untyped tailCdr;
+			tail = cast( tailCdr, XemePair);
 		}
 		
 		throw "Uh oh";

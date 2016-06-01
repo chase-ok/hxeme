@@ -5,7 +5,8 @@
 
 package hxeme.utils;
 
-import haxe.FastList;
+import haxe.ds.GenericStack;
+//import haxe.FastList;
 import hxeme.parsing.Parser;
 import hxeme.Errors;
 import hxeme.object.XemeGeneric;
@@ -40,7 +41,7 @@ class ListUtils {
     inline public static function ensureList(value : XemeGeneric) : XemePair {
         checkIsList(value);
         
-        return untyped value;
+        return cast(value, XemePair);
     }
     
     inline public static function append(tail  : XemePair, 

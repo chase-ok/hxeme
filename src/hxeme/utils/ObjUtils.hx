@@ -20,7 +20,7 @@ class ObjUtils {
     inline public static function ensureObj(value : XemeGeneric) : XemeObject {
         checkIsObj(value);
         
-        return untyped value;
+        return cast(value, XemeObject);
     }
     
 }

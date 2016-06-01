@@ -32,7 +32,7 @@ class BasicFunc {
         
     public static function apply(args : List<XemeGeneric>) : XemeGeneric {
     	var func = FuncUtils.ensureFunc(args.pop());
-    	return func.call(Lambda.list(ListUtils.ensureList(args.first())));
+    	return cast(func.call(Lambda.list(ListUtils.ensureList(args.first()))), XemeGeneric);
     }
     
     public static function begin(args : List<XemeGeneric>) : XemeGeneric {

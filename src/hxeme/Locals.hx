@@ -10,7 +10,7 @@ import hxeme.Errors;
 import hxeme.prims.PrimitiveManager;
 import hxeme.prims.SpecialForms;
 
-typedef LocalsSet = Hash<XemeGeneric>;
+typedef LocalsSet = Map<String, XemeGeneric>;
 
 class Locals {
 
@@ -18,7 +18,7 @@ class Locals {
     
     public function new(?increaseLevel = true) {
         sets = new List<LocalsSet>();
-        if (increaseLevel) sets.add(new Hash());
+        if (increaseLevel) sets.add(new Map());
     }
     
     public function setLocal(name : String, value : XemeGeneric) {
@@ -64,7 +64,7 @@ class Locals {
     }
     
     public function createLevel() {
-        sets.push(new Hash());
+        sets.push(new Map());
     }
     
     public function removeLevel() {

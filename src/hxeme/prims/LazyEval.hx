@@ -39,7 +39,7 @@ class LazyEval {
             throw TypeError(value, XemePromise.TYPE_NAME);
         }
         
-        var promise : XemePromise = untyped value;
+        var promise : XemePromise = cast(value, XemePromise);
         
         return promise.force(locals, eval);
     }

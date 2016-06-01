@@ -12,12 +12,12 @@ import hxeme.parsing.Parser;
 import hxeme.parsing.Tokenizer;
 import hxeme.prims.PrimitiveManager;
 
-#if neko
-import neko.Lib;
-import neko.Sys;
-import neko.io.File;
-import neko.io.FileInput;
-import neko.io.FileInput;
+//#if neko
+//import neko.Lib;
+//import neko.Sys;
+import sys.io.File;
+import sys.io.FileInput;
+import sys.io.FileOutput;
 
 class Console {
     
@@ -41,15 +41,17 @@ class Console {
             1
         ));
         
-		start();
+	//	start();
 	}
     
     public function readLine() : String {
-        return File.stdin().readLine();
+        return Sys.stdin().readLine();
+        //return File.stdin().readLine();
     }
     
     public function write(data : String) {
-        File.stdout().writeString(data);
+        //File.stdout().writeString(data);
+        Sys.stdout().writeString(data);
     }
     
     public function start() {
@@ -118,7 +120,8 @@ class Console {
 	
 }
 
-#elseif flash9
+//#else
+#if flash9
 
 import flash.display.Sprite;
 import flash.display.Graphics;

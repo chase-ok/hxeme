@@ -21,7 +21,8 @@ class BoolUtils {
     inline public static function ensureBool(value : XemeGeneric) : XemeBool {
         checkIsBool(value);
         
-        return untyped value;
+        return cast(value, XemeBool);
+        //return untyped value;
     }
     
     public static inline function wrapXemeBool(b : Bool) : XemeBool {

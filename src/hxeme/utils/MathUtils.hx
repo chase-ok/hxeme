@@ -21,7 +21,7 @@ class MathUtils {
     inline public static function ensureNum(value : XemeGeneric) : XemeNum {
         checkIsNum(value);
         
-        return untyped value;
+        return cast(value, XemeNum);
     }
     
 }

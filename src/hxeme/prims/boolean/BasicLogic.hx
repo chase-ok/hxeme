@@ -96,7 +96,7 @@ class BasicLogic {
         var arg = args.first();
         if (arg.getTypeName() != XemePair.TYPE_NAME) return XemeBool.FALSE;
         
-        var head : XemePair = untyped arg;
+        var head : XemePair = cast(arg, XemePair);
         return BoolUtils.wrapXemeBool(
                 head.cdr.getTypeName() == XemePair.TYPE_NAME);
     }

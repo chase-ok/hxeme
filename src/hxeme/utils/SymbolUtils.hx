@@ -20,11 +20,11 @@ class SymbolUtils {
     inline public static function ensureSymbol(value : XemeGeneric) : XemeSymbol {
         checkIsSymbol(value);
         
-        return untyped value;
+        return cast(value, XemeSymbol);
     }
     
     inline public static function getName(value : XemeSymbol) : String {
-        return untyped value.getValue();
+        return cast(value.getValue(), String);
     }
     
 }

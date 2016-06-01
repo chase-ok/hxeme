@@ -15,6 +15,6 @@ class FuncUtils {
     inline public static function ensureFunc(value : XemeGeneric) : XemeFunc {
         checkIsFunc(value);
         
-        return untyped value;
+        return cast(value, XemeFunc);
     }
 }
